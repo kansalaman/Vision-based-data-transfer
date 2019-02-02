@@ -26,7 +26,10 @@ if __name__ == '__main__':
             r = cv2.selectROI(frame)
             flag = 0
         roi = frame[int(r[1]):int(r[1] + r[3]), int(r[0]):int(r[0] + r[2])]
+
         # Perform operations on the frame
+
+
          # Display the frame
         time.sleep(0.5)
         mean_int = cv2.mean(roi)
