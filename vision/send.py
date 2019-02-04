@@ -34,6 +34,25 @@ def display(col):
         cv2.waitKey(500)
 
 
+def start():
+    cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
+    cv2.imshow('display', black_img)
+    cv2.waitKey(10000)
+    print("Displaying black")
+
+def separator():
+    cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
+    cv2.imshow('display', red_img)
+    cv2.waitKey(10000)
+    print("Displaying red to sep")
+
+
+def end():
+    cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
+    cv2.imshow('display', green_img)
+    cv2.waitKey(1000)
+    print("Displaying green")
+
 
 
 def encode(message, pos1, pos2):

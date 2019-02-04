@@ -39,16 +39,16 @@ if __name__ == '__main__':
         mean_int = cv2.mean(roi)
         if np.linalg.norm(mean_int) < 150:
             next_class = 0
-            print("Black")
+            # print("Black")
         elif np.linalg.norm(mean_int[:2]) < mean_int[2]:
             next_class = 1
-            print("Red")
+            # print("Red")
         elif np.linalg.norm(mean_int[1:3]) < mean_int[0]:
             next_class = 2
-            print("Blue")
+            # print("Blue")
         else:
             next_class = 3
-            print("Green")
+            # print("Green")
 
         if not ts:
             if prev_class == 0:
@@ -65,13 +65,16 @@ if __name__ == '__main__':
                 m1 = m1 + "1"
             elif prev_class == 3 and next_class == 2:
                 m1 = m1 + "0"
-
-        prev_class = next_class
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
         elif ct > 10:
             break
-        print(m1)
+        if prev_class == 1 and next_class == 1:
+            print(m1)
+            break
+
+        prev_class = next_class
+
     # When everything done, release the capture
 
     cap.release()
