@@ -15,11 +15,11 @@ def transmit(msg):
         display("Green")
         cv2.waitKey(200)
 
+
 def display(col):
     global red_img
     global blue_img
     global green_img
-    global win
     cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
     if col == 1:
         cv2.imshow('display', red_img)
@@ -40,26 +40,30 @@ def start():
     cv2.waitKey(10000)
     print("Displaying black")
 
-def separator():
+
+def sep():
     cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
     cv2.imshow('display', red_img)
-    cv2.waitKey(10000)
-    print("Displaying red to sep")
+    cv2.waitKey(1000)
+    cv2.imshow('display', blue_img)
+    cv2.waitKey(1000)
+    print("Displaying sep character")
 
 
 def end():
     cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
-    cv2.imshow('display', green_img)
+    cv2.imshow('display', blue_img)
     cv2.waitKey(1000)
-    print("Displaying green")
-
+    cv2.imshow('display', red_img)
+    cv2.waitKey(1000)
+    print("Displaying end character")
 
 
 def encode(message, pos1, pos2):
     pass
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     # Load images
     red_img = cv2.imread("red.jpg")
     blue_img = cv2.imread("blue.jpg")
@@ -71,17 +75,18 @@ if __name__ == '__main__':
     p11 = input("Position of first error in first message: ")
     p12 = input("Position of second error in first message: ")
 
-
     # second message
     m2 = input("Enter first message to be sent")
     p21 = input("Position of first error in second message: ")
     p22 = input("Position of second error in second message: ")
 
+    # encode messages
 
     enc1 = encode(m1, p11, p22)
-    transmit(enc1)
-
-    # transmit separation
-
     enc2 = encode(m2, p21, p22)
+
+    start()
+    transmit(enc1)
+    sep()  # transmit separation
     transmit(enc2)
+    end()

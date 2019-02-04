@@ -2,6 +2,8 @@ import cv2
 import time
 import numpy as np
 
+
+
 if __name__ == '__main__':
 
     #  bits
@@ -17,6 +19,7 @@ if __name__ == '__main__':
     prev_class = 0
     next_class = None
     ct = 0
+    cts = 0
     cap = cv2.VideoCapture(0)
 
     # State variables
@@ -39,25 +42,25 @@ if __name__ == '__main__':
         mean_int = cv2.mean(roi)
         if np.linalg.norm(mean_int) < 150:
             next_class = 0
-            # print("Black")
+            print("Black")
         elif np.linalg.norm(mean_int[:2]) < mean_int[2]:
             next_class = 1
-            # print("Red")
+            print("Red")
         elif np.linalg.norm(mean_int[1:3]) < mean_int[0]:
             next_class = 2
-            # print("Blue")
+            print("Blue")
         else:
             next_class = 3
-            # print("Green")
+            print("Green")
 
         if not ts:
             if prev_class == 0:
                 if next_class == 1:
-                    print("Tranmsission started")
+                    print("Transmission started")
                     m1 = "1"
                     ts = 1
                 if next_class == 2:
-                    print("Tranmsission started")
+                    print("Transmission started")
                     m1 = "0"
                     ts = 1
         else:
@@ -69,8 +72,9 @@ if __name__ == '__main__':
             break
         elif ct > 10:
             break
-        if prev_class == 1 and next_class == 1:
-            print(m1)
+        if prev_class == 1 and next_class == 2:
+            print(m1[:-1])
+
             break
 
         prev_class = next_class
