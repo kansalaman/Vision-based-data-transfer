@@ -1,8 +1,7 @@
 import cv2
 import time
 import numpy as np
-
-red_img = [255, 0, 0]
+from transmit import transmit
 
 def encode(message, pos1, pos2):
     pass
