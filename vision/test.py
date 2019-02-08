@@ -1,11 +1,11 @@
 import cv2
 import time
 import numpy as np
-
-
+from encode import encode
+from decode import decode
 def transmit(msg):
     for i in range(len(msg)):
-        x = msg[-(i + 1)]
+        x = msg[i]
         if x == '1':
             pass
             display(1)
@@ -13,7 +13,7 @@ def transmit(msg):
             pass
             display(0)
         display("Green")
-        cv2.waitKey(200)
+        # cv2.waitKey(200)
 
 
 def display(col):
@@ -32,7 +32,7 @@ def display(col):
         print("Displaying blue")
     else:
         cv2.imshow('display', green_img)
-        cv2.waitKey(500)
+        cv2.waitKey(1000)
 
 
 def sep():
@@ -71,10 +71,13 @@ if __name__ == '__main__':
     green_img = cv2.imread("green.jpg")
     black_img = np.zeros(red_img.shape)
     print("Transmitting test message 101")
+    print(decode(encode("101001001",2,3)))
+    print(decode(encode("1010",2,3)))
     start()
-    transmit("101")
+    transmit(encode("101001001",2,3))
     sep()
     black()
-    transmit("111")
+    transmit(encode("1010",2,3))
     sep()
-
+    print(encode("101001001",2,3)[0:10])
+    print(encode("1010",2,3)[0:10])
