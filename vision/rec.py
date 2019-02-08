@@ -1,5 +1,5 @@
 import cv2
-import time
+from decode import decode
 import numpy as np
 
 if __name__ == '__main__':

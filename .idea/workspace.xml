@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="825827f4-8110-4775-b417-6bc9ab64c9f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decode.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/encode.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vision/rec.py" beforeDir="false" afterPath="$PROJECT_DIR$/vision/rec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vision/send.py" beforeDir="false" afterPath="$PROJECT_DIR$/vision/send.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vision/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/vision/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vision/send.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="58" />
+            <state relative-caret-position="239">
+              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -30,14 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vision/rec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="129" column="4" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -88,8 +86,8 @@
       <list>
         <option value="$PROJECT_DIR$/vision/example.py" />
         <option value="$PROJECT_DIR$/vision/transmit.py" />
-        <option value="$PROJECT_DIR$/vision/send.py" />
         <option value="$PROJECT_DIR$/vision/test.py" />
+        <option value="$PROJECT_DIR$/vision/send.py" />
         <option value="$PROJECT_DIR$/vision/rec.py" />
       </list>
     </option>
@@ -154,12 +152,12 @@
       <updated>1549078840545</updated>
       <workItem from="1549078848811" duration="4992000" />
       <workItem from="1549273760752" duration="5432000" />
-      <workItem from="1549633981494" duration="1064000" />
+      <workItem from="1549633981494" duration="2361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16803000" />
+    <option name="totallyTimeSpent" value="18100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1280" height="695" extended-state="6" />
@@ -214,20 +212,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vision/send.py">
+    <entry file="file://$PROJECT_DIR$/vision/rec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="58" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vision/rec.py">
+    <entry file="file://$PROJECT_DIR$/vision/send.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="129" column="4" lean-forward="true" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="4" />
+        <state relative-caret-position="239">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

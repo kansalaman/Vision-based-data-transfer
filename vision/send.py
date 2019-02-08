@@ -1,7 +1,7 @@
 import cv2
 import time
 import numpy as np
-from fec import encode, decode
+from encode import encode
 
 
 def transmit(msg):
