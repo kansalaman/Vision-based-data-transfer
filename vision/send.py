@@ -1,6 +1,7 @@
 import cv2
 import time
 import numpy as np
+from fec import encode, decode
 
 
 def transmit(msg):
@@ -48,6 +49,12 @@ def sep():
     cv2.imshow('display', blue_img)
     cv2.waitKey(1000)
     print("Displaying sep character")
+
+def black():
+    cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
+    cv2.imshow('display', black_img)
+    cv2.waitKey(3000)
+    print("Displaying black")
 
 
 def end():

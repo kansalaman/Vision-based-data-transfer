@@ -2,6 +2,7 @@ import cv2
 import time
 import numpy as np
 
+
 def transmit(msg):
     for i in range(len(msg)):
         x = msg[-(i + 1)]
@@ -13,6 +14,7 @@ def transmit(msg):
             display(0)
         display("Green")
         cv2.waitKey(200)
+
 
 def display(col):
     global red_img
@@ -42,6 +44,13 @@ def sep():
     print("Displaying seps")
 
 
+def black():
+    cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
+    cv2.imshow('display', black_img)
+    cv2.waitKey(3000)
+    print("Displaying black")
+
+
 def end():
     cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
     cv2.imshow('display', green_img)
@@ -50,15 +59,13 @@ def end():
 
 
 def start():
-
-	cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
-	cv2.imshow('display', black_img)
-	cv2.waitKey(10000)
-	print("Displaying black")
+    cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
+    cv2.imshow('display', black_img)
+    cv2.waitKey(10000)
+    print("Displaying black")
 
 
 if __name__ == '__main__':
-
     red_img = cv2.imread("red.jpg")
     blue_img = cv2.imread("blue.jpg")
     green_img = cv2.imread("green.jpg")
@@ -67,3 +74,7 @@ if __name__ == '__main__':
     start()
     transmit("101")
     sep()
+    black()
+    transmit("111")
+    sep()
+
