@@ -92,5 +92,5 @@ def decode(full_message):
     if len(false_bits_list)==0:
         return ''.join(list(map(str,ans)))+' and no wrong bits'
     else:
-        return ''.join(list(map(str,ans)))+' and wrong bits were '+' '.join(list(map(str,false_bits_list)))
+        return ''.join(list(map(str,ans)))+' error bit positions: '+', '.join(list(map(str,false_bits_list)))
 

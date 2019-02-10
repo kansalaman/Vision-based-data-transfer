@@ -36,14 +36,24 @@ if __name__ == '__main__':
          # Display the frame
 
         mean_int = cv2.mean(roi)
+        max_val = np.argmax(mean_int)
         print(mean_int)
         if np.linalg.norm(mean_int) < 150:
             next_class = 0
             print("Black")
-        elif np.linalg.norm(mean_int[:2]) < mean_int[2]:
+        # elif np.mean(mean_int[:2]) < mean_int[2]:
+        #     next_class = 1
+        #     print("Red")
+        # elif np.mean(mean_int[1:3]) < mean_int[0]:
+        #     next_class = 2
+        #     print("Blue")
+        # else:
+        #     next_class = 3
+        #     print("Green")
+        elif max_val == 2:
             next_class = 1
             print("Red")
-        elif np.linalg.norm(mean_int[1:3]) < mean_int[0]:
+        elif max_val == 0:
             next_class = 2
             print("Blue")
         else:
@@ -82,14 +92,24 @@ if __name__ == '__main__':
 
         # Perform operations on the frame
         mean_int = cv2.mean(roi)
+        max_val = np.argmax(mean_int)
         print(mean_int)
         if np.linalg.norm(mean_int) < 150:
             next_class = 0
             print("Black2")
-        elif np.linalg.norm(mean_int[:2]) < mean_int[2]:
+        # elif np.mean(mean_int[:2]) < mean_int[2]:
+        #     next_class = 1
+        #     print("Red2")
+        # elif np.mean(mean_int[1:3]) < mean_int[0]:
+        #     next_class = 2
+        #     print("Blue2")
+        # else:
+        #     next_class = 3
+        #     print("Green2")
+        elif max_val == 2:
             next_class = 1
             print("Red2")
-        elif np.linalg.norm(mean_int[1:3]) < mean_int[0]:
+        elif max_val == 0:
             next_class = 2
             print("Blue2")
         else:
