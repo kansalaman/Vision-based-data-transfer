@@ -1,4 +1,5 @@
 import numpy as np
+from copy import deepcopy
 def odd(x):
     if x%2==0:
         return 0
@@ -12,6 +13,7 @@ def flip(x):
 def decode(full_message):
     full_message=list(map(int,list(full_message.strip())))
     message=full_message[0:27]
+    recvd_message=deepcopy(message)
     red_bits=full_message[27:54]
     message=np.reshape(np.array(message),(3,3,3))
     # print(message)
@@ -81,5 +83,14 @@ def decode(full_message):
             ans=message[i+1:]
             ans.reverse()
             break
-    return ''.join(list(map(str,ans)))
+    recvd_message=recvd_message[0:len(ans)]
+    # print(ans)
+    false_bits_list=list()
+    for i in range(len(ans)):
+        if recvd_message[i]!=ans[i]:
+            false_bits_list.append(i)
+    if len(false_bits_list)==0:
+        return ''.join(list(map(str,ans)))+' and no wrong bits'
+    else:
+        return ''.join(list(map(str,ans)))+' and wrong bits were '+' '.join(list(map(str,false_bits_list)))
 
