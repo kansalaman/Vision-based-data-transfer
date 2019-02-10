@@ -62,7 +62,7 @@ def black():
 if __name__ == '__main__':
     bit_duration = int(input("Enter bit duration: "))
     # Load images
-    bit_duration = input("Enter bit duration: ")
+    # bit_duration = input("Enter bit duration: ")
     red_img = cv2.imread("red.jpg")
     blue_img = cv2.imread("blue.jpg")
     green_img = cv2.imread("green.jpg")
