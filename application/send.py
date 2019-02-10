@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
     # encode messages
 
-    enc1 = encode(m1, p11, p22)
+    enc1 = encode(m1, p11, p12)
     enc2 = encode(m2, p21, p22)
 
     start()
