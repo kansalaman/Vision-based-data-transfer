@@ -1,11 +1,12 @@
 import cv2
 import time
 import numpy as np
-
+from encode import encode
+from decode import decode
 
 def transmit(msg):
     for i in range(len(msg)):
-        x = msg[-(i + 1)]
+        x = msg[i]
         if x == '1':
             pass
             display(1)
@@ -13,7 +14,7 @@ def transmit(msg):
             pass
             display(0)
         display("Green")
-        cv2.waitKey(200)
+        # cv2.waitKey(200)
 
 
 def display(col):
@@ -31,7 +32,7 @@ def display(col):
         print("Displaying blue")
     else:
         cv2.imshow('display', green_img)
-        cv2.waitKey(500)
+        cv2.waitKey(1000)
 
 
 def start():
@@ -44,10 +45,17 @@ def start():
 def sep():
     cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
     cv2.imshow('display', red_img)
-    cv2.waitKey(1000)
+    cv2.waitKey(500)
     cv2.imshow('display', blue_img)
-    cv2.waitKey(1000)
+    cv2.waitKey(500)
     print("Displaying sep character")
+
+
+def black():
+    cv2.namedWindow('display', cv2.WINDOW_FULLSCREEN)
+    cv2.imshow('display', black_img)
+    cv2.waitKey(3000)
+    print("Displaying black")
 
 
 def end():
@@ -57,11 +65,6 @@ def end():
     cv2.imshow('display', red_img)
     cv2.waitKey(1000)
     print("Displaying end character")
-
-
-def encode(message, pos1, pos2):
-    pass
-
 
 if __name__ == '__main__':
     # Load images
@@ -76,7 +79,7 @@ if __name__ == '__main__':
     p12 = input("Position of second error in first message: ")
 
     # second message
-    m2 = input("Enter first message to be sent")
+    m2 = input("Enter second message to be sent: ")
     p21 = input("Position of first error in second message: ")
     p22 = input("Position of second error in second message: ")
 
@@ -88,5 +91,6 @@ if __name__ == '__main__':
     start()
     transmit(enc1)
     sep()  # transmit separation
+    black()
     transmit(enc2)
-    end()
+    sep()
