@@ -1,2 +1,1 @@
-# 170050027_170050035_lab03
-Lab 03, CS 254
+# Vision Based Data Transfer
